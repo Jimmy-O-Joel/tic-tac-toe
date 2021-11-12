@@ -11,6 +11,9 @@ const WINNING_COMBINATIONS = [
     [2, 4, 6]
 ]
 
+const xturn = document.getElementById("xturn")
+const oturn = document.getElementById("oturn")
+
 const restartButton = document.getElementById('restartButton')
 const cellElements = document.querySelectorAll('[data-cell]')
 const board = document.getElementById('board')
@@ -79,12 +82,17 @@ function swapTurns(){
 }
 
 function setBoardHoverClass(){
+    oturn.classList.remove("o")
+    xturn.classList.remove("x")
     board.classList.remove(X_CLASS)
     board.classList.remove(CIRCLE_CLASS)
     if (circleTurn) {
         board.classList.add(CIRCLE_CLASS)
+        oturn.classList.add("o")
     }else{
         board.classList.add(X_CLASS)
+        xturn.classList.add("x")
+
     }
 }
 
